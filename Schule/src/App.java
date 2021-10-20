@@ -35,8 +35,8 @@ public class App {
         _schueler[0] = new Schueler("Jordan", "Velte", 22);
         _schueler[1] = new Schueler("Ferdinand", "Peters", 69);
         _schulklasse = new Schulklasse[10];
-        _schulklasse[0] = new Schulklasse("11b");
-        _schulklasse[1] = new Schulklasse("5c");
+        _schulklasse[0] = new Schulklasse("11b", _schueler[0]);
+        _schulklasse[1] = new Schulklasse("5c", _schueler[1]);
 
         //Menu
         Menu menu = new Menu();

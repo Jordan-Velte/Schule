@@ -101,10 +101,15 @@ public class Menu {
         }
         String schulklasse_choice = getScanner().nextLine();
         int schulklasse_index = Integer.valueOf(schulklasse_choice);
-        i = 0;
-        
-        //Problem
         System.out.println(App.getALLSchulklasse()[schulklasse_index].getSchueler().getVorname() + " " + App.getALLSchulklasse()[schulklasse_index].getSchueler().getNachname());
+        /*
+        //Problem
+        for (Schulklasse schulklasse: App.getALLSchulklasse()[schulklasse_index]){
+            if (schulklasse != null){
+                System.out.println(i + " - " + schulklasse.getSchueler().getVorname() + " " + schulklasse.getSchueler().getNachname() + " " + schulklasse.getSchueler().getSchulnummer());
+                i++;
+            }
+        }*/
     }
 
 }

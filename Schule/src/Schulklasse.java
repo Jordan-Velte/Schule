@@ -1,8 +1,8 @@
 public class Schulklasse {
     String _name;
-    Schueler _schueler;
+    Schueler[] _schueler;
 
-    public Schulklasse(String name, Schueler schueler){
+    public Schulklasse(String name, Schueler[] schueler){
         setName(name);
         setSchueler(schueler);
     }
@@ -12,13 +12,13 @@ public class Schulklasse {
     public void setName(String name) {
         this._name = name;
     }
-    public void setSchueler(Schueler schueler) {
+    public void setSchueler(Schueler[]schueler) {
         this._schueler = schueler;
     }
     public String getName() {
         return _name;
     }
-    public Schueler getSchueler() {
+    public Schueler[] getSchueler() {
         return _schueler;
     }
 
