@@ -2,7 +2,7 @@ public class Schueler {
     String _vorname;
     String _nachname;
     int _schulnummer;
-    Schulklasse _schulklasse;
+    Schulklasse _schulklasse; 
 
     public Schueler(String vorname, String nachname, int schulnummer){
         setNachname(nachname);
