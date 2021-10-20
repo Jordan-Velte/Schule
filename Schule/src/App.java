@@ -29,8 +29,6 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        System.out.println("Erster Test");
         _schueler = new Schueler[30];
         _schueler[0] = new Schueler("Jordan", "Velte", 22);
         _schueler[1] = new Schueler("Ferdinand", "Peters", 69);
