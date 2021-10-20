@@ -25,7 +25,7 @@ public class Menu {
             System.out.println("(3) Schueler zeigen");
             System.out.println("(4) Schulklassen zeigen");
             String choice_j = getScanner().nextLine();
-            System.out.println("Deine Auswahl ist: " + choice_j);
+            System.out.println("Die Auswahl ist: " + choice_j);
             if(choice_j.equals("1")){
                 createSchueler();
             }
@@ -44,7 +44,7 @@ public class Menu {
 
         }
         else if(choice.equals("n")){
-            System.out.println("Deine Auswahl ist: NEIN");
+            System.out.println("Die Auswahl ist: NEIN");
             System.out.println("Die Anwendung wird nicht gestartet.");
         }
         else{
@@ -101,7 +101,12 @@ public class Menu {
         }
         String schulklasse_choice = getScanner().nextLine();
         int schulklasse_index = Integer.valueOf(schulklasse_choice);
-        System.out.println(App.getALLSchulklasse()[schulklasse_index].getSchueler().getVorname() + " " + App.getALLSchulklasse()[schulklasse_index].getSchueler().getNachname());
+        
+
+
+        //Problem: Aus ausgewählter Klasse die Schueler anzeigen lassen.
+        //null + null
+        System.out.println(App.getALLSchulklasse()[schulklasse_index].getSchueler() + " " + App.getALLSchulklasse()[schulklasse_index].getSchueler());
         /*
         //Problem
         for (Schulklasse schulklasse: App.getALLSchulklasse()[schulklasse_index]){
