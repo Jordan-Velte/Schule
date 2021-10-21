@@ -61,6 +61,25 @@ public class Menu {
         System.out.println("Schulnummer: ");
         String string_schuelerschulnummer = getScanner().nextLine();
         int schuelerschulnummer = Integer.valueOf(string_schuelerschulnummer);
+        if (schuelerschulnummer == 69){
+            System.out.println("Diese Nummer ist nicht valide, wählen Sie eine andere.");
+            createSchueler();
+        }
+        else{
+            System.out.println("Schulkasse: ");
+            int i = 0;
+            for (Schulklasse schulklasse : App.getALLSchulklasse()){
+                if (schulklasse!=null){
+                    System.out.println(i + " - " + schulklasse.getName());
+                    i++;
+                }
+            }
+            String schulklasse_choice = getScanner().nextLine();
+            int schulklassen_index = Integer.valueOf(schulklasse_choice);
+            App.addSchueler(new Schueler(schuelervorname, schuelernachname, schuelerschulnummer, App.getALLSchulklasse()[schulklassen_index]));
+            System.out.println("Es wurde ein neuer Schueler eingetragen.");
+        }
+        /*
         System.out.println("Schulklasse: ");
         int i = 0;
         for (Schulklasse schulklasse : App.getALLSchulklasse()){
@@ -72,7 +91,7 @@ public class Menu {
         String schulklasse_choice = getScanner().nextLine();
         int schulklassen_index = Integer.valueOf(schulklasse_choice);
         App.addSchueler(new Schueler(schuelervorname, schuelernachname, schuelerschulnummer, App.getALLSchulklasse()[schulklassen_index]));
-        System.out.println("Es wurde ein neuer Schueler eingetragen.");
+        System.out.println("Es wurde ein neuer Schueler eingetragen.");*/
     }
 
     public void createSchulklasse(){
