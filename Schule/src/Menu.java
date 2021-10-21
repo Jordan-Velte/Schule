@@ -59,8 +59,8 @@ public class Menu {
         System.out.println("Nachname: ");
         String schuelernachname = getScanner().nextLine();
         System.out.println("Schulnummer: ");
-        String stringschuelerschulnummer = getScanner().nextLine();
-        int schuelerschulnummer = Integer.valueOf(stringschuelerschulnummer);
+        String string_schuelerschulnummer = getScanner().nextLine();
+        int schuelerschulnummer = Integer.valueOf(string_schuelerschulnummer);
         System.out.println("Schulklasse: ");
         int i = 0;
         for (Schulklasse schulklasse : App.getALLSchulklasse()){
@@ -79,18 +79,42 @@ public class Menu {
         System.out.println("Schulklasse erstellen. ");
         System.out.println("Name: ");
         String schulklassenname = getScanner().nextLine();
-        App.addSchulklasse(new Schulklasse(schulklassenname));
+        System.out.println("Maximale Teilnehmer: ");
+        String string_maxteilnehmer = getScanner().nextLine();
+        int schulklassemaxteilnemer = Integer.valueOf(string_maxteilnehmer);
+        App.addSchulklasse(new Schulklasse(schulklassenname, schulklassemaxteilnemer));
         System.out.println("Es wurde eine neue Schulklasse eingetragen.");
     }
 
     public void showSchueler(){
         for (Schueler schueler: App.getALLSchueler()){
             if (schueler != null){
-                System.out.println(schueler.getVorname() + " " + schueler.getNachname() + " " + schueler.getSchulnummer());
+                System.out.println(schueler.getVorname() + " " + schueler.getNachname() + " " + schueler.getSchulnummer() + " " + schueler.getSchulklasse().getName());
             }
         }
     }
+
+
     public void showSchulklasse(){
+        System.out.println("Alle Schulklassen:");
+        int i = 0;
+        for (Schulklasse schulklasse: App.getALLSchulklasse()){
+            if (schulklasse != null){
+                System.out.println(i + " - " + schulklasse.getName());
+                i++;
+            }
+        }
+        System.out.println("Alle Schueler in Schulklassen: ");
+        i = 0;
+        for (Schulklasse schulklasse : App.getALLSchulklasse()){
+            if (schulklasse != null){
+                System.out.println(i + " - " + schulklasse.getSchueler().getVorname() + " " + schulklasse.getSchueler().getNachname() + " " + schulklasse.getSchueler().getSchulnummer());
+                i++;
+            }
+        }
+
+    //ALT showSchulklasse()
+    /*public void showSchulklasse(){
         System.out.println("Wählen Sie eine Klasse aus:");
         int i = 0;
         for (Schulklasse schulklasse: App.getALLSchulklasse()){
@@ -100,13 +124,15 @@ public class Menu {
             }
         }
         String schulklasse_choice = getScanner().nextLine();
-        int schulklasse_index = Integer.valueOf(schulklasse_choice);
+        int schulklasse_index = Integer.valueOf(schulklasse_choice);*/
         
 
 
         //Problem: Aus ausgewählter Klasse die Schueler anzeigen lassen.
         //null + null
+        /*
         System.out.println(App.getALLSchulklasse()[schulklasse_index].getSchueler() + " " + App.getALLSchulklasse()[schulklasse_index].getSchueler());
+        */
         /*
         //Problem
         for (Schulklasse schulklasse: App.getALLSchulklasse()[schulklasse_index]){
